@@ -11,3 +11,12 @@ class TestStringQuestions(TestCase):
 
     def test3_hasRepeatCharacters(self):
         self.assertFalse(StringQuestions.hasRepeatCharacters(""))
+
+    def test1_hasRepeatCharactersSpace(self):
+        self.assertTrue(StringQuestions.hasRepeatCharacters("bolo", space_efficient=True))
+
+    def test2_hasRepeatCharactersSpace(self):
+        self.assertFalse(StringQuestions.hasRepeatCharacters("bola", space_efficient=True))
+
+    def test3_hasRepeatCharactersSpace(self):
+        self.assertFalse(StringQuestions.hasRepeatCharacters("", space_efficient=True))
