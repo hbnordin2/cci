@@ -20,3 +20,12 @@ class TestStringQuestions(TestCase):
 
     def test3_hasRepeatCharactersSpace(self):
         self.assertFalse(StringQuestions.hasRepeatCharacters("", space_efficient=True))
+
+    def test1_checkPermutations(self):
+        self.assertTrue(StringQuestions.checkPermutation("bob", "bbo"))
+
+    def test2_checkPermutations(self):
+        self.assertFalse(StringQuestions.checkPermutation("obb", "oob"))
+
+    def test3_checkPermutations(self):
+        self.assertFalse(StringQuestions.checkPermutation("bob", "bobs"))
