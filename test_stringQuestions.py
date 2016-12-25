@@ -29,3 +29,11 @@ class TestStringQuestions(TestCase):
 
     def test3_checkPermutations(self):
         self.assertFalse(StringQuestions.checkPermutation("bob", "bobs"))
+
+    def test1_urlify(self):
+        self.assertEqual(StringQuestions.urlify(['b', ' ', 'b', ' ', ' '], 5),
+                         ['b', '%', '2', '0', 'b'])
+
+    def test2_urlify(self):
+        self.assertEqual(StringQuestions.urlify(['b', ' ', ' ', 'b', ' ', ' ', ' ', ' '], 8),
+                         ['b', '%', '2', '0', '%', '2', '0', 'b'])

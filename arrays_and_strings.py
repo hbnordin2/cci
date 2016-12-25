@@ -72,3 +72,40 @@ class StringQuestions:
             if value != 0:
                 return False
         return True
+
+    @staticmethod
+    def urlify(target, size):
+        """
+        Given an array of characters with spaces, expands those spaces into %20. Size is the length
+        of the array, after this expansion. Runs in linear time, constant space consumption.
+
+        :param target:
+        The array to expand
+        :param size:
+        The size of the string in the array without any trailing spaces, after the expansion
+        :return:
+        The expanded version of the target array.
+        """
+        seen_index = size - 1
+        copy_index = size - 1
+
+        # Find the beginning of the string to expand
+        for i in range(size):
+            if target[size - 1 - i] != ' ':
+                seen_index = size - 1 - i
+                break
+
+        expanded_space = "%20"
+        # Replace the spaces in the string to explain with the appropriate spacer
+        for i in range(seen_index + 1):
+            if target[seen_index] != ' ':
+                target[copy_index] = target[seen_index]
+                copy_index -= 1
+                seen_index -= 1
+            else:
+                seen_index -= 1
+                for j in range(3):
+                    target[copy_index - 2 + j] = expanded_space[j]
+                copy_index -= 3
+
+        return target
