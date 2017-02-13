@@ -53,3 +53,9 @@ class TestStack(TestCase):
         stack + 1
         stack + 2
         self.assertEquals(stack.stack, [1, 2])
+
+    def test_string_representation(self):
+        stack = Stack()
+        stack + 1
+        stack + 2
+        self.assertEquals(str(stack), str([1, 2]))
