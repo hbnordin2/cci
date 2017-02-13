@@ -47,3 +47,9 @@ class TestStack(TestCase):
         list_element = stack.peek()
         list_element.append(2)
         self.assertEquals(stack.stack, [[1]])
+
+    def test_add_sign(self):
+        stack = Stack()
+        stack + 1
+        stack + 2
+        self.assertEquals(stack.stack, [1, 2])
