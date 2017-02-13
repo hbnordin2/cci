@@ -1,0 +1,8 @@
+
+\.idea/
+
+arrays_and_strings/Python/__pycache__/
+
+stacks_and_queues/Python/__pycache__/
+
+*.pyc
