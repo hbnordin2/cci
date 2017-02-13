@@ -1,5 +1,5 @@
 from unittest import TestCase
-from string_questions import StringQuestions
+from .string_questions import StringQuestions
 
 
 class TestStringQuestions(TestCase):
